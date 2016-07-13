@@ -1,0 +1,20 @@
+---
+declared-services:
+  personality-insights-service:
+    label: personality_insights
+    plan: tiered
+  language-translation-service:
+    label: language_translation
+    plan: standard
+
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: pi-nodejs-tcawatson-dev
+  host: pi-nodejs-tcawatson-dev
+  disk_quota: 1024M
+  services:
+  - personality-insights-service
+  - language-translation-service 
